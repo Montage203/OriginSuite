@@ -9232,3 +9232,23 @@ iframe {
   height: 315px;
 
 }
+
+
+@media (min-width: 1200px) {
+      
+  #menu {
+    bottom: 0px;
+  }
+  main {    width: 80%;
+margin: auto;}
+}
+
+@media (max-width: 1199px) {
+  #menu {
+    top: 10px;
+  }
+
+}
+  #menu {
+    z-index: 10;
+  }

@@ -6307,9 +6307,9 @@ button.bg-dark:hover {
 .justify-content-center {
   justify-content: center !important;
 }
-.justify-content-between {
+/*.justify-content-between {
   justify-content: space-between !important;
-}
+}*/
 .justify-content-around {
   justify-content: space-around !important;
 }
@@ -9253,5 +9253,8 @@ margin: auto;}
     z-index: 10;
   }
 
-  footer {position: absolute;
-    bottom: 0px!important;}
+  footer {
+    bottom: 0px!important;
+    width: inherit;}
+footer .d-flex {    place-content: center;}
+

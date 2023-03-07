@@ -53,21 +53,21 @@
             <div class="card mb-4">
               <div class="card-header">Versions</div>
               <div class="card-body">
-                <div id="mapidaa"></div>
-                
+                <div id="mapidaa" style="height: 500px;"></div>
+
                 <script>
-                  // Créer une carte Leaflet centrée sur votre monde Minecraft
-                  var map = L.map('mapidaa').setView([0.0, 0.0], 0);
-              
-                  // Ajouter l'image de votre monde Minecraft en tant que couche de carte
-                  var imageUrl = 'map/map7-03.png';
-                  var imageBounds = [[0.0, 0.0], [1657, 1010]];
-                  L.imageOverlay(imageUrl, imageBounds).addTo(map);
-              
-                  // Ajouter les contrôles de zoom et de positionnement
-                  L.control.zoom().addTo(map);
-                  L.control.scale().addTo(map);
-              </script>
+                    // Créer une carte Leaflet centrée sur votre monde Minecraft
+                    var map = L.map('mapidaa').setView([70.0, 100.0], 3);
+                    
+                    // Ajouter l'image de votre monde Minecraft en tant que couche de carte
+                    var imageUrl = 'map/map7-03.png';
+                    var imageBounds = [[0.0, 0.0], [5000, 200]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                    
+                    // Ajouter les contrôles de zoom et de positionnement
+                    L.control.zoom().addTo(map);
+                    L.control.scale().addTo(map);
+                </script>
               
 
                 

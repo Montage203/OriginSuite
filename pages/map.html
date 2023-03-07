@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Ce site à été mis en place par Montage203 afin d'améliorer l'expérience de jeu des joueurs d'OriginCraft.">
+    <meta name="keywords" content="HTML, CSS, JavaScrip">
+    <meta name="author" content="Montage203">
+    <title>OriginSuite</title>
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/stylespersonnages.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+  </head>
+  <body class="sb-nav-fixed">
+    <nav class="menu sb-topnav navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="https://montage203.github.io/OriginSuite">OriginSuite</a> |
+      <a class="nav-link" href="https://montage203.github.io/OriginSuite">
+          Accueil</a> |
+          <a class="nav-link" href="./texturepack.html"><b>TexturePack</b></a>
+
+  </nav>
+
+  
+    <div id="layoutSidenav">
+
+
+
+      <div id="content" style="width: 100%;margin-top: 35px;">
+        <main>
+          <div class="container-fluid">
+            <h1 class="mt-4">TexturePack</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item"><a href="https://montage203.github.io/OriginSuite/">Accueil</a></li>
+              <li class="breadcrumb-item active">TexturePack</li>
+            </ol>
+            <div class="card mb-4">
+              <div class="card-body">
+                Le TexturePack <b>OriginSuite</b> est une extension au texturepack officiel d'OriginCraft.<br>
+                Il transforme certains éléments du jeu qui manque dans le texturepack officiel.<br>
+                Si vous avez des idées pour l'améliorer, n'hésitez pas à contacter Montage203 en jeu.
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-header">Versions</div>
+              <div class="card-body">
+                <div id="mapidaa"></div>
+                
+                <script>
+                  // Créer une carte Leaflet centrée sur votre monde Minecraft
+                  var map = L.map('mapidaa').setView([0.0, 0.0], 0);
+              
+                  // Ajouter l'image de votre monde Minecraft en tant que couche de carte
+                  var imageUrl = 'map/map7-03.png';
+                  var imageBounds = [[0.0, 0.0], [1657, 1010]];
+                  L.imageOverlay(imageUrl, imageBounds).addTo(map);
+              
+                  // Ajouter les contrôles de zoom et de positionnement
+                  L.control.zoom().addTo(map);
+                  L.control.scale().addTo(map);
+              </script>
+              
+
+                
+                2
+                <img src="map/map7-03.png">
+
+              </div>
+              <div class="card-footer small text-muted">
+                Dernière mise à jour : le 01/03/2023
+              </div>
+            </div>
+          </div>
+        </main>
+       
+        <footer class="py-4 bg-light mt-auto">
+          <div class="container-fluid">
+            <div
+              class="d-flex align-items-center justify-content-between small"
+            >
+              <div class="text-muted">Copyright &copy; OriginSuite 2023</div>
+              <!--<div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
+              </div>-->
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/scriptspersonnage.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/membres.js"></script>
+    <script src="../assets/tutoriels.js"></script>
+
+
+    <div id="id_view_image_body"></div>
+    <div id="id_view_image"></div>
+  </body>
+</html>

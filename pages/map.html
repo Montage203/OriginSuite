@@ -35,49 +35,79 @@
     <div id="layoutSidenav">
 
 
+      <div id="content" style="width: 100%;">
 
-      <div id="content" style="width: 100%;margin-top: 35px;">
-        <main>
-          <div class="container-fluid">
-            <h1 class="mt-4">Map</h1>
-            <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item"><a href="https://montage203.github.io/OriginSuite/">Accueil</a></li>
-              <li class="breadcrumb-item active">Map</li>
-            </ol>
-            <div class="card mb-4">
-              <div class="card-body">
-                Voici la map survie d'OriginCraft
-              </div>
-            </div>
-            <div class="card mb-4">
-              <div class="card-header">Map</div>
-              <div class="card-body">
-                <div id="mapidaa" style="height: 500px;"></div>
 
-                <script>
-                    // Créer une carte Leaflet centrée sur votre monde Minecraft
-                    var map = L.map('mapidaa').setView([66.5, 85.0], 5);
-                    
-                    // Ajouter l'image de votre monde Minecraft en tant que couche de carte
-                    var imageUrl = 'map/map8-03.png';
-                    var imageBounds = [[0.0, 0.0], [2000, 170]];
-                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
-                    
-                    // Ajouter les contrôles de zoom et de positionnement
-                    /*L.control.zoom().addTo(map);*/
-                    L.control.scale().addTo(map);
-                    
-                </script>
-              
-              
+<style>.fixed-top, .sb-nav-fixed #layoutSidenav #layoutSidenav_nav, .sb-nav-fixed .sb-topnav {
+  position: inherit!important;}</style>
 
-              </div>
-              <div class="card-footer small text-muted">
-                Dernière mise à jour : le 08/03/2023
-              </div>
-            </div>
-          </div>
-        </main>
+
+<div id="map1" class="map" style="margin: 1vh;height: 74vh; display: block; grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
+  <div class="map-label">Carte 1</div>
+</div>
+<div id="map2" class="map" style="margin: 1vh;height: 74vh; display: none; grid-template-rows: repeat(2, 1fr); grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
+  <div class="map-label">Carte 2</div>
+</div>
+<button id="toggle-map-btn">Changer de carte</button>
+<style>
+  .map-label {
+    color: black;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    position: none;
+    height: 100%;
+    background-color: rgb(255 255 255 / 70%);
+    height: auto;
+    width: 91px;
+    margin: auto;
+    border-bottom: groove;
+  }
+</style>
+<script>
+  var map1 = L.map('map1').setView([10, 180.0], 6);
+  var map2 = L.map('map2').setView([84.2, 180.0], 6);
+
+  var imageUrls1 = ['map/map8-031.png', 'map/map8-032.png'];
+  var imageUrls2 = ['map/map8-033.png', 'map/map8-034.png'];
+
+  var imageBoundsTop1 = [        [[0, 0], [2000, 200]], // map8-031.png
+      [[0, 400], [2000, 200]] // map8-032.png
+  ];
+
+  var imageBoundsTop2 = [        [[0, 0], [2000, 200]], // map8-033.png
+      [[0, 400], [2000, 200]] // map8-034.png
+  ];
+
+  for (var i = 0; i < imageUrls1.length; i++) {
+      L.imageOverlay(imageUrls1[i], imageBoundsTop1[i]).addTo(map1);
+      L.imageOverlay(imageUrls2[i], imageBoundsTop2[i]).addTo(map2);
+  }
+
+  L.control.scale().addTo(map1);
+  L.control.scale().addTo(map2);
+
+  var toggleBtn = document.getElementById('toggle-map-btn');
+  toggleBtn.addEventListener('click', function() {
+      var map1El = document.getElementById('map1');
+      var map2El = document.getElementById('map2');
+
+      if (map1El.style.display === 'none') {
+          map1El.style.display = 'grid';
+          map2El.style.display = 'none';
+      } else {
+          map1El.style.display = 'none';
+          map2El.style.display = 'grid';
+      }
+  });
+</script>
+
+
+
+      
+      <div class="card-footer small text-muted">
+        Dernière mise à jour : le 08/03/2023
+      </div>          
        
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid">
